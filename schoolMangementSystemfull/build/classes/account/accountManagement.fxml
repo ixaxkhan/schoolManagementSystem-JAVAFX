@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.AccountManagementController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="1048.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-14.0" layoutY="-4.0" prefHeight="129.0" prefWidth="1062.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0">
+         <children>
+            <Label layoutX="232.0" layoutY="21.0" text="Account Mangement" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="278.0" layoutY="94.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="26.0" layoutY="72.0" mnemonicParsing="false" onAction="#backToSystemSetting" prefHeight="44.0" prefWidth="143.0" style="-fx-background-color: #2D75E8;" text="  ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <TabPane layoutY="125.0" prefHeight="474.0" prefWidth="1048.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+        <tabs>
+            <Tab text="Fee Collection">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="toutionTable" layoutY="126.0" prefHeight="319.0" prefWidth="1048.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+                           <columns>
+                              <TableColumn fx:id="tbToutionSlip" prefWidth="75.0" text="Slip_no" />
+                              <TableColumn fx:id="tbToutionRegNo" prefWidth="75.0" text="Reg_no" />
+                              <TableColumn fx:id="tbToutionName" prefWidth="87.0" text="Name" />
+                              <TableColumn fx:id="tbToutionFName" prefWidth="105.0" text="Father_name" />
+                              <TableColumn fx:id="tbToutionDate" prefWidth="105.0" text="Date" />
+                              <TableColumn fx:id="tbToutionFeeType" prefWidth="105.0" text="Fee_type" />
+                              <TableColumn fx:id="tbToutionStatus" prefWidth="105.0" text="Status" />
+                              <TableColumn fx:id="tbToutionTotalFee" prefWidth="105.0" text="Total Fee" />
+                              <TableColumn fx:id="tbToutionPaidFee" prefWidth="105.0" text="Paid_fee" />
+                              <TableColumn fx:id="tbToutionDues" prefWidth="105.0" text="Dues" />
+                              <TableColumn fx:id="tbToutionUpdate" prefWidth="105.0" text="Update" />
+                              <TableColumn fx:id="tbToutionDelete" prefWidth="105.0" text="Delete" />
+                              <TableColumn fx:id="tbToutionView" prefWidth="105.0" text="View" />
+                           </columns>
+                        </TableView>
+                        <JFXTextField fx:id="ToutionSearch" labelFloat="true" layoutX="5.0" layoutY="92.0" prefHeight="25.0" prefWidth="203.0" promptText="Search" />
+                        <JFXButton layoutX="1200.0" layoutY="60.0" onAction="#ToutionAdd" prefHeight="64.0" prefWidth="181.0" style="-fx-background-color: #d3c4c0; -fx-background-radius: 1em;" text="Add" textFill="#514f4f">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-plus-48%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="393.0" layoutY="92.0" onAction="#toutionTableRefresh" style="-fx-background-color: #27a4b5;" text="  " textFill="#fcf5f5">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-update-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Employee Salary">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="empTable" layoutY="126.0" prefHeight="319.0" prefWidth="1048.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+                           <columns>
+                              <TableColumn fx:id="tbEmpSlip" prefWidth="75.0" text="Slip_no" />
+                              <TableColumn fx:id="tbEmpRegNo" prefWidth="75.0" text="Reg_no" />
+                              <TableColumn fx:id="tbEmpName" prefWidth="87.0" text="Name" />
+                              <TableColumn fx:id="tbEmpFName" prefWidth="105.0" text="Father_name" />
+                              <TableColumn fx:id="tbEmpDate" prefWidth="105.0" text="Date" />
+                              <TableColumn fx:id="tbEmpFeeType" prefWidth="105.0" text="Fee_type" />
+                              <TableColumn fx:id="tbEmpStatus" prefWidth="105.0" text="Status" />
+                              <TableColumn fx:id="tbEmpTotalFee" prefWidth="105.0" text="Total Fee" />
+                              <TableColumn fx:id="tbEmpPaidFee" prefWidth="105.0" text="Paid_fee" />
+                              <TableColumn fx:id="tbEmpDues" prefWidth="105.0" text="Dues" />
+                              <TableColumn fx:id="tbEmpUpdate" prefWidth="105.0" text="Update" />
+                              <TableColumn fx:id="tbEmpDelete" prefWidth="105.0" text="Delete" />
+                              <TableColumn fx:id="tbEmpView" prefWidth="105.0" text="View" />
+                           </columns>
+                        </TableView>
+                        <JFXTextField fx:id="txfEmpSearch" labelFloat="true" layoutX="5.0" layoutY="92.0" prefHeight="25.0" prefWidth="203.0" promptText="Search" />
+                        <JFXButton layoutX="1200.0" layoutY="60.0" onAction="#empAdd" prefHeight="64.0" prefWidth="181.0" style="-fx-background-color: #d3c4c0; -fx-background-radius: 1em;" text="Add" textFill="#514f4f">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-plus-48%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="393.0" layoutY="92.0" onAction="#empTableRefresh" style="-fx-background-color: #27a4b5;" text="  " textFill="#ebeeee">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-update-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

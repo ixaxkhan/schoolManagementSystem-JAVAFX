@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane prefHeight="450.0" prefWidth="730.0" style="-fx-background-radius: 38em;" styleClass="modal-dialog" stylesheets="@../expenses/modal-dialog.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="transport.ViechleRegUpdateViewController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="679.0">
+         <children>
+            <JFXTextField fx:id="txfViechleName" labelFloat="true" layoutX="55.0" layoutY="81.0" prefHeight="25.0" prefWidth="200.0" promptText="Viechle Name" />
+            <JFXButton layoutX="275.0" layoutY="300.0" onAction="#update" prefHeight="22.0" prefWidth="102.0" style="-fx-background-radius: 2em; -fx-background-color: #009688;" text="Update" textFill="#efedf8" />
+            <JFXButton onAction="#closeWindow" prefHeight="48.0" prefWidth="47.0" style="-fx-background-radius: 5em;" text="  " textFill="#da0a0a">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-delete-48%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </JFXButton>
+            <JFXTextField fx:id="txfViechleNo" labelFloat="true" layoutX="421.0" layoutY="81.0" prefHeight="25.0" prefWidth="200.0" promptText="Viechle No" />
+            <JFXTextField fx:id="txfCapacity" labelFloat="true" layoutX="55.0" layoutY="192.0" prefHeight="25.0" prefWidth="200.0" promptText="Viechle Capacity" />
+            <JFXComboBox fx:id="comboRouteName" labelFloat="true" layoutX="421.0" layoutY="191.0" prefHeight="31.0" prefWidth="200.0" promptText="Route Name" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

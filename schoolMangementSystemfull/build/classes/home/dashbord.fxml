@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.DashbordController">
+   <children>
+      <SplitPane prefHeight="135.0" prefWidth="1129.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Pane prefHeight="133.0" prefWidth="1114.0" style="-fx-background-color: #2D75E8;">
+               <children>
+                  <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="1065.0" layoutY="75.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane layoutX="1049.0" layoutY="30.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <MenuButton layoutX="1059.0" layoutY="3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="48.0" style="-fx-background-color: #3A84C3;" text=" " textAlignment="CENTER" textFill="#f8f1f1">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#logout" text="Log Out" />
+                    </items>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </Pane>
+         </items>
+      </SplitPane>
+      <GridPane hgap="15.0" layoutX="45.0" layoutY="158.0" prefHeight="103.0" prefWidth="869.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="158.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #3A84C3; -fx-background-radius: 1em;">
+               <children>
+                  <Label alignment="CENTER" layoutX="62.0" layoutY="65.0" text="Total Amount" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labTotalAmount" alignment="CENTER" layoutX="72.0" layoutY="20.0" text="500" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #EEAC4C; -fx-background-radius: 1em;" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="81.0" layoutY="69.0" text="Total Dues" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labTotalDues" layoutX="70.0" layoutY="25.0" text="1000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+               <children>
+                  <Label layoutX="62.0" layoutY="70.0" text="Total Student" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labTotalStudent" layoutX="79.0" layoutY="25.0" text="10" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #D7534E; -fx-background-radius: 1em;" GridPane.columnIndex="3">
+               <children>
+                  <Label layoutX="57.0" layoutY="70.0" text="Absent Student" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labAbsentStudent" layoutX="90.0" layoutY="25.0" text="2" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <SplitPane layoutX="27.0" layoutY="288.0" prefHeight="420.0" prefWidth="1094.0">
+         <items>
+            <SplitPane prefHeight="410.0" prefWidth="1092.0">
+              <items>
+                  <SplitPane orientation="VERTICAL" prefHeight="405.0" prefWidth="1092.0">
+                    <items>
+                        <SplitPane prefHeight="407.0" prefWidth="1092.0">
+                           <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="1092.0">
+                                 <children>
+                                    <Pane layoutY="14.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#studentMangement" prefHeight="70.0" prefWidth="200.0" text="    ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-student-female-48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="67.0" layoutY="74.0" text="Student" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="224.0" layoutY="14.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#employeeManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/classroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="82.0" layoutY="74.0" text="Employee" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="140.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#AttendenceManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/schedule.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="55.0" layoutY="74.0" text="Attendence" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="454.0" layoutY="14.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#accountManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-money-40.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="68.0" layoutY="74.0" text="  Accounts" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="454.0" layoutY="140.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#expenseManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/money.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="72.0" layoutY="74.0" text="Expenses" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="224.0" layoutY="140.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#transportManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-tour-bus-48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="71.0" layoutY="74.0" text="Transport" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="267.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#inventoryMangement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-open-box-64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="63.0" layoutY="74.0" text="Inventory" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="224.0" layoutY="267.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#reportMangement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-account-64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="76.0" layoutY="74.0" text="Reports" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="454.0" layoutY="267.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-radius: 1em; -fx-background-color: #e5e5e5;">
+                                       <children>
+                                          <JFXButton layoutY="4.0" onAction="#smsManagement" prefHeight="70.0" prefWidth="200.0" text="  ">
+                                             <graphic>
+                                                <ImageView fitHeight="58.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/email.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                          <Label layoutX="72.0" layoutY="74.0" text="SMS" />
+                                       </children>
+                                    </Pane>
+                                    <Separator layoutX="656.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="387.0" prefWidth="21.0" style="-fx-border-width: 2em;" />
+                                    <PieChart fx:id="pieChart" layoutX="689.0" layoutY="27.0" prefHeight="323.0" prefWidth="333.0" />
+                                    <Separator layoutX="-5.0" layoutY="380.0" prefHeight="12.0" prefWidth="1091.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                    </items>
+                  </SplitPane>
+              </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

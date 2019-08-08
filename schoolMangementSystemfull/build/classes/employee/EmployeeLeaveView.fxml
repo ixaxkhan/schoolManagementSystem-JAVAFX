@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<SplitPane prefHeight="549.0" prefWidth="1367.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employee.EmployeeLeaveViewController">
+   <items>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <AnchorPane prefHeight="232.0" prefWidth="1036.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="txfReason" layoutX="646.0" layoutY="17.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="53.0" prefHeight="17.0" prefWidth="152.0" text="Employee Registration No :" />
+                  <Label layoutX="508.0" layoutY="108.0" prefHeight="17.0" prefWidth="116.0" text="Leaving Reason :" />
+                  <JFXButton layoutX="920.0" layoutY="105.0" onAction="#saveEmployeeLeave" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #0a723c; -fx-background-radius: 2em;" text="Save" textFill="WHITE" />
+                  <TextField fx:id="txfsearchBox" layoutX="1190.0" layoutY="205.0" prefHeight="25.0" prefWidth="175.0" promptText="Search by Employee Reg. No" style="-fx-background-radius: 2em;" />
+                  <ComboBox fx:id="comboRegNo" layoutX="193.0" layoutY="49.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                  <Label layoutX="113.0" layoutY="147.0" prefHeight="17.0" prefWidth="35.0" text="Date :" />
+                  <DatePicker fx:id="txfDate" layoutX="193.0" layoutY="143.0" prefHeight="25.0" prefWidth="200.0" />
+                  <JFXButton layoutX="14.0" layoutY="202.0" onAction="#refresh" text="   ">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-update-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="table" prefHeight="272.0" prefWidth="1365.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tbRegNo" prefWidth="183.0" text="Employee Register No" />
+                      <TableColumn fx:id="tbName" prefWidth="138.0" text="Name" />
+                        <TableColumn fx:id="tbFatherName" prefWidth="144.0" text="Father Name" />
+                        <TableColumn fx:id="tbLeaveDate" prefWidth="146.0" text="leave Data " />
+                        <TableColumn fx:id="tbLeaveReason" prefWidth="175.0" text="Leaving Reason" />
+                        <TableColumn fx:id="tbSalary" prefWidth="134.0" text="Salary" />
+                        <TableColumn fx:id="tbGender" prefWidth="150.0" text="Gender" />
+                        <TableColumn fx:id="tbDelete" prefWidth="150.0" text="Delete" />
+                        <TableColumn fx:id="tbView" prefWidth="150.0" text="View" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </items>
+</SplitPane>

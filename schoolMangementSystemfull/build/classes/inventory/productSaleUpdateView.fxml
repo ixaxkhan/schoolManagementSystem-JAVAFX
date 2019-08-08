@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane prefHeight="525.0" prefWidth="1005.0" style="-fx-background-radius: 38em;" styleClass="modal-dialog" stylesheets="@../expenses/modal-dialog.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.ProductSaleUpdateViewController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="954.0">
+         <children>
+            <JFXDatePicker fx:id="txfDate" layoutX="78.0" layoutY="48.0" prefHeight="29.0" prefWidth="200.0" promptText="Date" />
+            <JFXButton layoutX="436.0" layoutY="405.0" onAction="#update" prefHeight="22.0" prefWidth="102.0" style="-fx-background-radius: 2em; -fx-background-color: #009688;" text="Update" textFill="#efedf8" />
+            <JFXButton onAction="#closeWindow" prefHeight="48.0" prefWidth="47.0" style="-fx-background-radius: 5em;" text="  " textFill="#da0a0a">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-delete-48%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </JFXButton>
+            <JFXComboBox fx:id="comboClass" labelFloat="true" layoutX="65.0" layoutY="126.0" prefHeight="31.0" prefWidth="200.0" promptText="class Name" />
+            <JFXComboBox fx:id="comboSection" labelFloat="true" layoutX="65.0" layoutY="206.0" prefHeight="31.0" prefWidth="200.0" promptText="Section Name" />
+            <JFXComboBox fx:id="comboStudentRegNo" labelFloat="true" layoutX="65.0" layoutY="289.0" prefHeight="31.0" prefWidth="200.0" promptText="Student Registration No" />
+            <JFXComboBox fx:id="comboProductName" labelFloat="true" layoutX="387.0" layoutY="46.0" prefHeight="31.0" prefWidth="200.0" promptText="Product Name" />
+            <JFXTextField fx:id="txfProductQuantity" labelFloat="true" layoutX="387.0" layoutY="127.0" prefHeight="29.0" prefWidth="200.0" promptText="Product Quantity" />
+            <JFXTextField fx:id="txfUnitPrice" labelFloat="true" layoutX="387.0" layoutY="207.0" prefHeight="29.0" prefWidth="200.0" promptText="Uint Price" />
+            <JFXTextField fx:id="txfTotalPrice" labelFloat="true" layoutX="387.0" layoutY="290.0" prefHeight="29.0" prefWidth="200.0" promptText="Total Price" />
+            <JFXComboBox fx:id="comboStatus" labelFloat="true" layoutX="692.0" layoutY="46.0" prefHeight="31.0" prefWidth="200.0" promptText="Fee Status" />
+            <JFXTextField fx:id="txfPaidAmount" labelFloat="true" layoutX="692.0" layoutY="127.0" prefHeight="29.0" prefWidth="200.0" promptText="Paid Amount" />
+            <Label fx:id="labRemainAmount" layoutX="698.0" layoutY="228.0" prefHeight="21.0" prefWidth="200.0" text="Remain amount" textFill="#f20202" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.expenseReports.DailyExpenseReportViewController">
+   <children>
+      <Label layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="337.0" text="Total Expenses Consume Records" underline="true" />
+      <Label layoutX="5.0" layoutY="311.0" prefHeight="17.0" prefWidth="394.0" text="Individual Expense Consume   Records" underline="true" />
+      <HBox layoutX="341.0" layoutY="255.0" prefHeight="35.0" prefWidth="337.0">
+         <children>
+            <JFXButton onAction="#tolExpenseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="341.0" layoutY="528.0" prefHeight="35.0" prefWidth="337.0">
+         <children>
+            <JFXButton onAction="#indivExpenseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXComboBox fx:id="comboExpenseName" labelFloat="true" layoutX="279.0" layoutY="336.0" prefHeight="25.0" prefWidth="200.0" promptText="Expense Name" />
+      <Separator layoutX="2.0" layoutY="308.0" prefHeight="0.0" prefWidth="1052.0" />
+      <JFXDatePicker fx:id="FromDate1" layoutX="228.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+      <JFXDatePicker fx:id="toDate1" layoutX="499.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+      <JFXDatePicker fx:id="fromDate2" layoutX="287.0" layoutY="429.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+      <JFXDatePicker fx:id="toDate2" layoutX="578.0" layoutY="336.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+   </children>
+</AnchorPane>

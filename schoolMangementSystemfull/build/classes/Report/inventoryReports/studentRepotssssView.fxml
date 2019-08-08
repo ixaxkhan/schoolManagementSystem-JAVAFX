@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane prefHeight="584.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.inventoryReports.studentReportssssViewController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="777.0" prefWidth="1052.0">
+         <children>
+            <Label layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="337.0" text="Total Student Record" underline="true" />
+            <Label layoutX="5.0" layoutY="224.0" prefHeight="17.0" prefWidth="394.0" text="Total Student Record by Class Section  Wise" underline="true" />
+            <HBox layoutX="331.0" layoutY="156.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#tolStudentView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="331.0" layoutY="419.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#totalStudentByClassSectionView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator layoutX="1.0" layoutY="222.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Separator layoutX="-14.0" layoutY="470.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Label layoutX="5.0" layoutY="472.0" prefHeight="17.0" prefWidth="394.0" text="Individual Student Record" underline="true" />
+            <HBox layoutX="331.0" layoutY="725.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#indivStudentView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="373.0" layoutY="925.0" prefHeight="35.0" prefWidth="337.0" />
+            <JFXComboBox fx:id="comboClass1" labelFloat="true" layoutX="363.0" layoutY="267.0" prefHeight="25.0" prefWidth="201.0" promptText="class Name" />
+            <JFXComboBox fx:id="comboSection1" layoutX="363.0" layoutY="337.0" prefHeight="25.0" prefWidth="201.0" promptText="Section Name" />
+            <JFXComboBox fx:id="comboClass2" labelFloat="true" layoutX="325.0" layoutY="501.0" prefHeight="25.0" prefWidth="201.0" promptText="class Name" />
+            <JFXComboBox fx:id="comboSection2" labelFloat="true" layoutX="325.0" layoutY="617.0" prefHeight="25.0" prefWidth="201.0" promptText="Section Name" />
+            <JFXComboBox fx:id="comboRegNo" labelFloat="true" layoutX="627.0" layoutY="501.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Reg No" />
+            <JFXComboBox fx:id="status1" labelFloat="true" layoutX="364.0" layoutY="58.0" prefHeight="25.0" prefWidth="200.0" promptText="Student Status" />
+            <JFXComboBox fx:id="status2" labelFloat="true" layoutX="642.0" layoutY="267.0" prefHeight="25.0" prefWidth="200.0" promptText="Student Status" />
+            <JFXComboBox fx:id="status3" labelFloat="true" layoutX="628.0" layoutY="605.0" prefHeight="25.0" prefWidth="200.0" promptText="Student Status" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane prefHeight="584.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.inventoryReports.InventoryProductReportViewController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1053.0" prefWidth="1052.0">
+         <children>
+            <Label layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="337.0" text="Total Product Stock Records" underline="true" />
+            <Label layoutX="5.0" layoutY="224.0" prefHeight="17.0" prefWidth="394.0" text="Total Product Purchase Records" underline="true" />
+            <HBox layoutX="331.0" layoutY="168.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#tolStockView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="331.0" layoutY="358.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#totalProductPurchaseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator layoutX="1.0" layoutY="222.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Separator layoutX="1.0" layoutY="403.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Label layoutX="5.0" layoutY="407.0" prefHeight="17.0" prefWidth="394.0" text="Total Product Sale Record" underline="true" />
+            <HBox layoutX="331.0" layoutY="517.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#totalProductSaleView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator layoutX="2.0" layoutY="571.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Label layoutX="5.0" layoutY="583.0" prefHeight="17.0" prefWidth="394.0" text="Individual Product Purchase Record" underline="true" />
+            <JFXComboBox fx:id="productName1" labelFloat="true" layoutX="242.0" layoutY="588.0" prefHeight="25.0" prefWidth="200.0" promptText="Product Name" />
+            <HBox layoutX="331.0" layoutY="738.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#indivProductPurchaseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator layoutX="2.0" layoutY="794.0" prefHeight="4.0" prefWidth="1052.0" />
+            <Label layoutX="5.0" layoutY="805.0" prefHeight="17.0" prefWidth="394.0" text="Individual Product Sale Record" underline="true" />
+            <JFXComboBox fx:id="productName2" labelFloat="true" layoutX="242.0" layoutY="830.0" prefHeight="25.0" prefWidth="200.0" promptText="Product Name" />
+            <HBox layoutX="331.0" layoutY="993.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#indivProductSaleView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXDatePicker fx:id="fromDate1" layoutX="237.0" layoutY="263.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date" />
+            <JFXDatePicker fx:id="toDate1" layoutX="519.0" layoutY="263.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <JFXDatePicker fx:id="fromDate2" layoutX="226.0" layoutY="430.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date" />
+            <JFXDatePicker fx:id="toDate2" layoutX="526.0" layoutY="430.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <JFXDatePicker fx:id="fromDate3" layoutX="242.0" layoutY="674.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date" />
+            <JFXDatePicker fx:id="toDate3" layoutX="528.0" layoutY="588.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <JFXDatePicker fx:id="toDate4" layoutX="556.0" layoutY="830.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <JFXDatePicker fx:id="fromDate4" layoutX="249.0" layoutY="925.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

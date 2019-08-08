@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.superAdmin.SuperAdminViewController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="1048.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="-2.0" prefHeight="124.0" prefWidth="1048.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+         <children>
+            <Label layoutX="291.0" layoutY="14.0" text="System Configuration Setting" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="524.0" layoutY="82.0" prefHeight="19.0" prefWidth="204.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <MenuButton layoutX="1009.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Me" textFill="#61a12f">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#myProfile" text="Profile" />
+                <MenuItem fx:id="logoutbtn" mnemonicParsing="false" onAction="#logout" text="Logout" />
+              </items>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </MenuButton>
+            <JFXButton fx:id="homebtn" layoutX="14.0" layoutY="33.0" onAction="#gotoHome" prefHeight="57.0" prefWidth="80.0" text="  ">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="140.0" layoutY="252.0" prefHeight="302.0" prefWidth="1029.0">
+         <children>
+            <GridPane hgap="15.0" prefHeight="103.0" prefWidth="979.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="171.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="231.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="238.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="103.0" prefWidth="233.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;">
+                     <children>
+                        <Label layoutX="86.0" layoutY="81.0" text="Fee Structure" />
+                        <JFXButton layoutX="2.0" onAction="#feeStructure" prefHeight="70.0" prefWidth="242.0" style="-fx-background-radius: 1em;" text="  ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/icons8-stack-of-money-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="75.0" layoutY="81.0" text="System Backup " />
+                        <JFXButton layoutX="-3.0" onAction="#backup" prefHeight="70.0" prefWidth="238.0" style="-fx-background-radius: 1em;" text="  ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/icons8-database-view-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+                     <children>
+                        <JFXButton layoutY="2.0" onAction="#restore" prefHeight="70.0" prefWidth="242.0" style="-fx-background-radius: 1em;" text="  ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/icons8-database-restore-64.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                        <Label layoutX="80.0" layoutY="81.0" text="System Restore" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="104.0" prefWidth="211.0" style="-fx-background-radius: 1em;" GridPane.columnIndex="3" />
+               </children>
+            </GridPane>
+            <GridPane hgap="15.0" layoutX="50.0" prefHeight="103.0" prefWidth="979.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;">
+                     <children>
+                        <Label layoutX="92.0" layoutY="72.0" text="Admin" />
+                        <JFXButton layoutX="2.0" onAction="#addAdmin" prefHeight="70.0" prefWidth="231.0" style="-fx-background-radius: 1em;" text="   ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/icons8-add-user-group-man-man-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="87.0" layoutY="81.0" text="School Info" />
+                        <JFXButton layoutX="2.0" onAction="#changeSchoolInfo" prefHeight="70.0" prefWidth="231.0" style="-fx-background-radius: 1em;" text="   ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/school%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+                     <children>
+                        <Label layoutX="63.0" layoutY="81.0" text="Standard &amp; Sections" />
+                        <JFXButton layoutX="2.0" onAction="#StandardandSection" prefHeight="70.0" prefWidth="231.0" style="-fx-background-radius: 1em;" text="  ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/icons8-section-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="103.0" prefWidth="199.0" style="-fx-background-radius: 1em;" GridPane.columnIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

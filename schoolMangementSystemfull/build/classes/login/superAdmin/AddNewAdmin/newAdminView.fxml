@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<ScrollPane style="-fx-background-radius: 40em;" styleClass="modal-dialog" stylesheets="@../SchoolInfo/modal-dialog.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.superAdmin.AddNewAdmin.newAdminController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="892.0">
+         <children>
+            <AnchorPane layoutY="121.0" />
+            <Pane layoutX="162.0" layoutY="121.0" prefHeight="366.0" prefWidth="297.0" style="-fx-border-width: 2; -fx-background-radius: 15; -fx-border-color: #e5e5e5;">
+               <children>
+                  <GridPane prefHeight="366.0" prefWidth="297.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="txfAdminName" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="247.0" promptText="Admin Name">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txfAdminPhone" alignment="CENTER" labelFloat="true" promptText="Phone Number" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <JFXRadioButton fx:id="radioAminMale" layoutX="33.0" layoutY="38.0" text="Male" />
+                              <JFXRadioButton fx:id="radioAdminFemale" layoutX="195.0" layoutY="38.0" text="Female" />
+                           </children>
+                        </Pane>
+                        <JFXTextArea fx:id="txfAdminAddress" labelFloat="true" prefHeight="74.0" prefWidth="481.0" promptText="Address" style="-fx-border-color: #F7F7F7; -fx-border-width: 2; -fx-background-radius: 1em;" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </JFXTextArea>
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Pane layoutX="177.0" layoutY="107.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #F7F7F7;">
+               <children>
+                  <Label layoutX="-4.0" layoutY="6.0" prefHeight="21.0" prefWidth="116.0" text="Personal Info" />
+               </children>
+            </Pane>
+            <Pane layoutX="536.0" layoutY="116.0" prefHeight="366.0" prefWidth="297.0" style="-fx-border-width: 2; -fx-background-radius: 15; -fx-border-color: #e5e5e5;">
+               <children>
+                  <GridPane layoutX="7.0" prefHeight="366.0" prefWidth="265.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="txfAdminUserName" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="264.0" promptText="Email / UserName">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txfAdminPassword" alignment="CENTER" labelFloat="true" layoutX="10.0" layoutY="89.0" promptText="Password" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Pane layoutX="558.0" layoutY="99.0" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #F7F7F7;">
+               <children>
+                  <Label layoutY="8.0" prefHeight="21.0" prefWidth="167.0" text="System Credential Info" />
+               </children>
+            </Pane>
+            <VBox layoutY="116.0" prefHeight="366.0" prefWidth="123.0" stylesheets="@style.css">
+               <children>
+                  <JFXButton id="toggle" onAction="#saveAdmin" prefHeight="46.0" prefWidth="123.0" text="Save">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-plus-48%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton id="toggle" layoutX="10.0" layoutY="10.0" onAction="#updateAdmin" prefHeight="46.0" prefWidth="123.0" text="Update">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-save-as-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton id="toggle" layoutX="10.0" layoutY="56.0" onAction="#deleteAdmin" prefHeight="46.0" prefWidth="123.0" text="Delete">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-delete-bin-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton id="toggle" layoutX="10.0" layoutY="102.0" onAction="#clearAdmin" prefHeight="46.0" prefWidth="123.0" text="Reset">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-update-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton id="toggle" layoutX="10.0" layoutY="148.0" onAction="#ViewAdmins" prefHeight="46.0" prefWidth="123.0" text="View">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-view-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXTextField fx:id="txfAdminId" alignment="CENTER" labelFloat="true" layoutX="302.0" layoutY="54.0" prefHeight="25.0" prefWidth="248.0" promptText="Admin ID" stylesheets="@style.css" />
+            <JFXCheckBox id="toggle" fx:id="checkOperation" layoutX="101.0" layoutY="54.0" prefHeight="33.0" prefWidth="152.0" stylesheets="@style.css" text="Are you perform operation" />
+            <JFXButton onAction="#closeWindow" prefHeight="48.0" prefWidth="47.0" style="-fx-background-radius: 5em;" text="  " textFill="#da0a0a">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8-delete-48%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

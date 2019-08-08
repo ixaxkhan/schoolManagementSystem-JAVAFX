@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.Registration.StudentController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="1048.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-14.0" layoutY="-4.0" prefHeight="133.0" prefWidth="1084.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-4.0">
+         <children>
+            <Label layoutX="232.0" layoutY="21.0" text="Student Management" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="278.0" layoutY="94.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="26.0" layoutY="72.0" mnemonicParsing="false" onAction="#backToSystemSetting" prefHeight="44.0" prefWidth="143.0" style="-fx-background-color: #2D75E8;" text="  ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <TabPane layoutY="128.0" prefHeight="565.0" prefWidth="1068.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="128.0">
+        <tabs>
+          <Tab text="Student Registration">
+               <content>
+                  <SplitPane dividerPositions="0.42228464419475653" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="408.0">
+                           <children>
+                              <BorderPane prefHeight="716.0" prefWidth="501.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <AnchorPane prefHeight="57.0" prefWidth="501.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="txfSearchBox" layoutX="217.0" layoutY="31.0" prefHeight="25.0" prefWidth="231.0" promptText="Search by Name" style="-fx-background-radius: 2em;" />
+                                          <JFXButton ellipsisString="   " layoutY="27.0" onAction="#represhTable" prefHeight="32.0" prefWidth="71.0" text="   ">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../images/icons8-update-48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ScrollPane prefHeight="659.0" prefWidth="501.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="table" prefHeight="482.0" prefWidth="1500.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="tbStuReg" prefWidth="150.0" text="Student Registration No" />
+                                                    <TableColumn fx:id="tbStuName" prefWidth="150.0" text="Name" />
+                                                      <TableColumn fx:id="tbFatherName" prefWidth="150.0" text="Father Name" />
+                                                      <TableColumn fx:id="tbDateBith" prefWidth="150.0" text="Date Birth" />
+                                                      <TableColumn fx:id="tbGender" prefWidth="150.0" text="Gender" />
+                                                      <TableColumn fx:id="tbAddress" prefWidth="150.0" text="Address" />
+                                                      <TableColumn fx:id="tbPhoneNumber" prefWidth="150.0" text="phone" />
+                                                      <TableColumn fx:id="tbEmail" prefWidth="110.0" text="Email" />
+                                                      <TableColumn fx:id="tbUpdate" prefWidth="110.0" text="Update" />
+                                                      <TableColumn fx:id="tbDelete" prefWidth="110.0" text="Delete" />
+                                                      <TableColumn fx:id="tbView" prefWidth="110.0" text="View" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="545.0" prefWidth="492.0">
+                           <children>
+                              <BorderPane prefHeight="536.0" prefWidth="614.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ScrollPane prefHeight="533.0" prefWidth="614.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <fx:include source="form.fxml" />
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+          <Tab text="Student Leave">
+               <content>
+                  <SplitPane prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                        <fx:include source="studentLView.fxml" />
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+            <Tab text="Student Promot">
+               <content>
+                  <SplitPane prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                        <fx:include source="studentPromotView.fxml" />
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

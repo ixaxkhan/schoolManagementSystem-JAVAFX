@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<SplitPane prefHeight="569.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="expenses.CategoryViewController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <BorderPane prefHeight="569.0" prefWidth="1048.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="245.0" prefWidth="1048.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <GridPane layoutX="57.0" layoutY="43.0" prefHeight="109.0" prefWidth="467.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="117.0" layoutY="10.0" text="Date :" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <DatePicker fx:id="txfDate" cache="true" cacheHint="QUALITY" depthTest="ENABLE" layoutX="6.0" layoutY="6.0" prefHeight="25.0" prefWidth="231.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="6.0" prefHeight="17.0" prefWidth="130.0" text="Expense Category :" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField fx:id="txfCategory" cache="true" cacheHint="QUALITY" depthTest="ENABLE" layoutX="10.0" layoutY="2.0" prefHeight="25.0" prefWidth="224.0" style="-fx-background-radius: 1em;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                        <Pane layoutX="-1.0" layoutY="169.0" prefHeight="76.0" prefWidth="1048.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="169.0">
+                           <children>
+                              <HBox layoutX="609.0" layoutY="21.0" prefHeight="25.0" prefWidth="150.0">
+                                 <children>
+                                    <JFXButton onAction="#save" prefHeight="28.0" prefWidth="200.0" style="-fx-background-color: #04903c; -fx-background-radius: 2em;" text="Save" textFill="#f9fffb">
+                                       <effect>
+                                          <GaussianBlur radius="0.0" />
+                                       </effect>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="txfSearchField" layoutX="1150.0" layoutY="46.0" prefHeight="25.0" prefWidth="200.0" promptText="Search By Category Name" style="-fx-background-radius: 2em;" />
+                              <JFXButton layoutX="14.0" layoutY="34.0" onAction="#refresh" text="   ">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-update-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="340.0" prefWidth="1048.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="table" layoutX="14.0" layoutY="44.0" prefHeight="322.0" prefWidth="1046.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tbExpenseID" prefWidth="139.0" text="Expense ID" />
+                            <TableColumn fx:id="tbExpenseName" prefWidth="152.0" text="Expense Name" />
+                              <TableColumn fx:id="tbDate" prefWidth="155.0" text="Date" />
+                              <TableColumn fx:id="tbUpdate" prefWidth="230.0" text="Update" />
+                              <TableColumn fx:id="tbDelete" prefWidth="192.0" text="Delete" />
+                              <TableColumn fx:id="tbView" prefWidth="177.0" text="View" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

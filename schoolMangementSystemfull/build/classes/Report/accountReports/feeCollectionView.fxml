@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane prefHeight="584.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.accountReports.FeeCollectionViewController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1040.0" prefWidth="1052.0">
+         <children>
+            <Label layoutX="2.0" layoutY="6.0" prefHeight="17.0" prefWidth="337.0" text="Total School Fee Record" underline="true" />
+            <Label layoutX="5.0" layoutY="311.0" prefHeight="17.0" prefWidth="394.0" text="Class Section Wise Fee Report" underline="true" />
+            <JFXDatePicker fx:id="tolSchoolFromDate" layoutX="557.0" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+            <JFXDatePicker fx:id="tolSchoolToDate" layoutX="557.0" layoutY="112.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <HBox layoutX="332.0" layoutY="251.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#tolSchoolView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="332.0" layoutY="572.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#schoolSectionView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXDatePicker fx:id="schoolSectionFromDate" layoutX="714.0" layoutY="363.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+            <JFXDatePicker fx:id="schoolSectionToDate" layoutX="714.0" layoutY="459.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <Separator layoutX="2.0" layoutY="308.0" prefHeight="0.0" prefWidth="1052.0" />
+            <Separator layoutY="625.0" prefHeight="3.0" prefWidth="1052.0" />
+            <Label layoutX="5.0" layoutY="626.0" prefHeight="17.0" prefWidth="394.0" text="Individual Student Fee Record" underline="true" />
+            <HBox layoutX="332.0" layoutY="974.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#indivStudentView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXComboBox fx:id="comboClass1" labelFloat="true" layoutX="401.0" layoutY="363.0" prefHeight="25.0" prefWidth="200.0" promptText="Class Name" />
+            <JFXComboBox fx:id="comboSection1" labelFloat="true" layoutX="401.0" layoutY="459.0" prefHeight="25.0" prefWidth="200.0" promptText="Section Name" />
+            <VBox layoutX="163.0" layoutY="669.0">
+               <children>
+                  <JFXComboBox fx:id="comboClass2" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Class Name">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="comboSection2" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Section Name">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="indivStudentRegNo" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Student Registration No">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+               </children>
+            </VBox>
+            <JFXDatePicker fx:id="indivStudentToDate" layoutX="757.0" layoutY="669.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+            <JFXComboBox fx:id="comboStatus1" labelFloat="true" layoutX="102.0" layoutY="459.0" prefHeight="25.0" prefWidth="200.0" promptText="Status" />
+            <JFXComboBox fx:id="comboStatus2" labelFloat="true" layoutX="255.0" layoutY="112.0" prefHeight="25.0" prefWidth="200.0" promptText="Status" />
+            <VBox layoutX="457.0" layoutY="669.0">
+               <children>
+                  <JFXComboBox fx:id="comboFeeType3" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Fee Type">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="comboStatus3" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Status">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXDatePicker fx:id="indivStudentFromDate" prefHeight="25.0" prefWidth="200.0" promptText="From Date ">
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </JFXDatePicker>
+               </children>
+            </VBox>
+            <JFXComboBox fx:id="comboFeeType2" labelFloat="true" layoutX="255.0" layoutY="34.0" prefHeight="25.0" prefWidth="200.0" promptText="Fee Type" />
+            <JFXComboBox fx:id="comboFeeType1" labelFloat="true" layoutX="102.0" layoutY="363.0" prefHeight="25.0" prefWidth="200.0" promptText="Fee Type" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

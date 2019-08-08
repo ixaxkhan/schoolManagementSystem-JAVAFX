@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="630" pageHeight="842" columnWidth="590" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="725e63d6-45cf-4aab-bdfd-f12907879c98">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="viechle_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  VEHICLE.NAME as viechle_name,
+ VEHICLE.VIECHLE_NO,
+shool_info.NAME as school_name,
+ shool_info.PHONE,
+ shool_info.ADDRESS,
+ shool_info.LOGO,
+STUDENT.REG_ID,
+STUDENT.NAME as student_name,
+STUDENT.GENDER,
+STUDENT.ADDRESS as student_address,
+
+VEHICLE.TOTAL_SEATS from shool_info,VEHICLE,STUDENT where student.viechle_id=$P{viechle_id} and VEHICLE.id=$P{viechle_id}]]>
+	</queryString>
+	<field name="VIECHLE_NAME" class="java.lang.String"/>
+	<field name="VIECHLE_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SCHOOL_NAME" class="java.lang.String"/>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REG_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STUDENT_NAME" class="java.lang.String"/>
+	<field name="GENDER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STUDENT_ADDRESS" class="java.lang.String"/>
+	<field name="TOTAL_SEATS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="144" height="79" uuid="4f3cd7dc-7170-4230-97f0-e92ebdeb779e"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="74" y="62" width="516" height="20" uuid="878d8082-2a40-4903-acbb-1e8d6ca0df95"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="74" y="18" width="516" height="33" forecolor="#FFFFFF" backcolor="#009999" uuid="dac22ed5-24b3-46d2-b27a-7dd5a546d23b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SCHOOL_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="256" y="0" width="104" height="20" uuid="ae18530c-b63d-47e4-b7b5-40ec95813518"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Viechles  Record]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="862b6720-185b-4799-9668-b5f4515ed6af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VIECHLE_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="99" height="20" uuid="53c74558-6acf-432a-b6f5-44ea391030f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VIECHLE_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="41" width="113" height="20" uuid="e68a702a-74a0-42a2-b106-572cc14bd69f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TOTAL_SEATS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="41" width="60" height="20" uuid="f24c2ade-bd95-4561-9ba3-919cbfdbc703"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[REG_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="41" width="100" height="20" uuid="6649a108-13b9-4eb4-b54b-21f144fbd4e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[STUDENT_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="41" width="118" height="20" uuid="59fb52cf-3ede-4b21-a01e-6834ea94e044"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[STUDENT_ADDRESS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="20" uuid="12a65618-2c02-4d18-b86f-915ad74ea1f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VIECHLE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="99" height="20" uuid="a53c1d2d-f0ae-4a91-88e3-035a7871ee27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VIECHLE_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="199" y="3" width="113" height="20" uuid="177d3a0c-550c-4ab5-97ea-cbf9d895d15e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TOTAL_SEATS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="3" width="60" height="20" uuid="a28edc01-fe9f-406b-9e25-a491d1d77f8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{REG_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="3" width="100" height="20" uuid="8a042f2d-4428-4ac4-a10a-a02f6b3b606c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STUDENT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="3" width="118" height="20" uuid="6f1eb182-53ce-402f-937b-b55de02ec09a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STUDENT_ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="437" y="34" width="80" height="20" uuid="f8ff5d45-99d3-43d2-93f1-df033d08a263"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="517" y="34" width="40" height="20" uuid="65162d71-51ef-4b2b-afc0-bdf069ada268"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

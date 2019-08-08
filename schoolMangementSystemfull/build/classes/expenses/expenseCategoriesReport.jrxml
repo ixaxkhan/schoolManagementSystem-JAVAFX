@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Fee_type" language="groovy" pageWidth="400" pageHeight="400" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83a940db-41fb-4909-8251-b9bd00745308">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="category_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  SHOOL_INFO.ID as school_info_id,
+ SHOOL_INFO.NAME,
+ SHOOL_INFO.PHONE,
+ SHOOL_INFO.ADDRESS,
+ SHOOL_INFO.LOGO,
+ EXPENSE_TYPE.ID as expense_id,
+ EXPENSE_TYPE.CATEGORY,
+ EXPENSE_TYPE.DATE AS EXPENSE_TYPE_DATE
+
+
+ from  EXPENSE_TYPE ,SHOOL_INFO where EXPENSE_TYPE.ID=$P{category_id}]]>
+	</queryString>
+	<field name="SCHOOL_INFO_ID" class="java.lang.Integer"/>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EXPENSE_ID" class="java.lang.Integer"/>
+	<field name="CATEGORY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EXPENSE_TYPE_DATE" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="59" y="26" width="301" height="27" forecolor="#FFFFFF" backcolor="#006666" uuid="c8081548-5e28-4e44-b22c-720db9438662"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="14" width="100" height="50" uuid="981c5800-505e-4751-a190-aed233b7fafa"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="59" y="53" width="301" height="20" uuid="32d4a5b1-fb2b-4548-84d7-6c7f9c9df684"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="78" y="15" width="203" height="20" uuid="e9cfdc01-668c-41a4-9e5d-f39c9a9dea23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Expense Category Record]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="355" height="1" uuid="34aa1eb5-4b6c-4ee2-9e93-c13bc9c1efcf"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="24" width="100" height="20" uuid="f2660a23-2c87-49b7-9319-9988cd4fe9dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[EXPENSE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="24" width="100" height="20" uuid="d7873471-0262-4f7e-8178-6bb0d6ec5af2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="24" width="123" height="20" uuid="d1e7cd15-52c1-48f4-a8e0-d36d41adaa72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[EXPENSE_TYPE_DATE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a7ff4c49-796a-4d84-bfbd-bd4c7603aeeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EXPENSE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="0" width="100" height="20" uuid="7fc51f89-ad0c-4e2b-adf0-d35b22cfb0f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CATEGORY}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="237" y="0" width="123" height="20" uuid="8ccac52e-98cc-4837-acf9-6abdc89de79d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EXPENSE_TYPE_DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.GiveSalaryViewController">
+   <children>
+      <Pane layoutX="57.0" layoutY="38.0" prefHeight="516.0" prefWidth="958.0" style="-fx-border-width: 2; -fx-border-color: #e5e5e5;">
+         <children>
+            <HBox layoutX="325.0" layoutY="455.0" prefHeight="35.0" prefWidth="337.0">
+               <children>
+                  <JFXButton onAction="#save" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #42ab1f;" text="Save" textFill="#e6ebe4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <VBox layoutX="96.0" layoutY="60.0" prefHeight="280.0" prefWidth="200.0">
+               <children>
+                  <JFXComboBox fx:id="comboEmpRegNo" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Employee Reg No" visibleRowCount="5">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXTextField fx:id="txfEmpName" labelFloat="true" promptText="Employee Name">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txfEmpFName" labelFloat="true" promptText="Employee Father Name" />
+               </children>
+            </VBox>
+            <VBox layoutX="400.0" layoutY="60.0" prefHeight="280.0" prefWidth="200.0">
+               <children>
+                  <JFXTextField fx:id="txfAmount" labelFloat="true" prefHeight="0.0" prefWidth="200.0" promptText="Amount">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="comboAmountType" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Amount Type" visibleRowCount="5">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXDatePicker fx:id="txfDate" prefHeight="25.0" prefWidth="210.0" promptText="Choose Date" />
+               </children>
+            </VBox>
+            <VBox layoutX="701.0" layoutY="60.0" prefHeight="280.0" prefWidth="200.0">
+               <children>
+                  <JFXComboBox fx:id="comboStatus" labelFloat="true" prefHeight="25.0" prefWidth="200.0" promptText="Status" visibleRowCount="5">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXTextField fx:id="txfPaidAmount" labelFloat="true" promptText="Paid Amount">
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <Label fx:id="labRemainAmount" prefHeight="24.0" prefWidth="200.0" text="Remaing Amount" textAlignment="RIGHT" textFill="#fc0707" textOverrun="LEADING_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="salarySlip2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="faa82c96-4d1c-4213-8913-7c2b29ef6427">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="28"/>
+	<parameter name="salary_slip_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="employee_name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select EMPLOYEE_SALARY . ID as salary_slip_id,
+ EMPLOYEE_SALARY .AMOUNT,
+EMPLOYEE_SALARY . STATUS,
+ EMPLOYEE_SALARY .DATE,
+ EMPLOYEE_SALARY .REMAIN_AMOUNT,
+ EMPLOYEE_SALARY .PAID_AMOUNT,
+ EMPLOYEE_SALARY .FEE_TYPE,
+ EMPLOYEE_SALARY .EMPLOYEE_ID,
+shool_info.ID,
+ NAME,
+ PHONE,
+ ADDRESS,
+ LOGO
+
+ from shool_info ,EMPLOYEE_SALARY  where EMPLOYEE_SALARY .ID=$P{salary_slip_id}]]>
+	</queryString>
+	<field name="SALARY_SLIP_ID" class="java.lang.Integer"/>
+	<field name="AMOUNT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REMAIN_AMOUNT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAID_AMOUNT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FEE_TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EMPLOYEE_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="9" width="100" height="50" uuid="03e59eea-7328-48ab-83c8-327e06f2629c"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement mode="Opaque" x="51" y="27" width="504" height="32" forecolor="#FFFFFF" backcolor="#009999" uuid="5ba0a6fb-7d93-4b77-acc1-4ac8c9e4638e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="59" width="289" height="20" uuid="4175a371-0c69-4106-888f-edd05f970804"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="149" y="0" width="289" height="20" uuid="b8476691-2a10-4d71-9f6f-059913e762a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Employee Amount Slip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="100" height="20" uuid="4786590b-ba53-4781-9c68-4daef215d44b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Slip No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="29" width="108" height="20" uuid="e98de0c6-bc3d-4d30-ba9f-c0161c01cc16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{salary_slip_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="29" width="107" height="20" uuid="807dc218-9418-4ddb-9206-c9253cd1f447"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="438" y="29" width="120" height="20" uuid="59379f11-b5cf-44a3-9e52-b99d6e485b83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="360" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="51" width="100" height="20" uuid="68b8f5c2-8b9b-457c-85dd-8eb84e784173"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="127" width="109" height="20" uuid="77481c8b-20b9-4ee7-b623-af81cf06f89e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="194" width="109" height="20" uuid="6342c7f8-8354-4555-a1dd-b7bcd773c36b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paid Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="52" width="108" height="20" uuid="4a464254-48e5-4680-8dea-01c1d8663d47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="128" width="108" height="20" uuid="45410877-fbb2-439b-b3b7-23c33519d11f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="197" width="108" height="20" uuid="b8d3a1f7-9885-4f2a-90fa-4282c5c4c92e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PAID_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="268" width="108" height="20" uuid="1105860b-cc8a-49d9-b48e-bc70ddf70bc2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{REMAIN_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="268" width="109" height="20" uuid="34b2ca60-48d8-48b9-83ce-0c660049f442"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dues]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="51" width="100" height="20" uuid="fb680a22-a79d-46bc-b28e-ac2eae38bc3a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fee Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="431" y="51" width="109" height="20" uuid="571622c5-ff29-4f79-9e95-6f5e0745a6e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FEE_TYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="331" y="127" width="100" height="20" uuid="40b2ec1b-d318-41c3-9c25-eaba882f77e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Reg No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="198" width="100" height="20" uuid="ba1e4ae8-4a1a-42c0-a364-ae0ab44221bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="438" y="127" width="100" height="20" uuid="9067032b-485d-4da6-96a9-48856072a411"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="197" width="100" height="20" uuid="886704ba-7c7e-429e-8bb8-8674beefb697"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{employee_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" uuid="cd130ca1-ec7b-4dad-8379-60edc56fabf9"/>
+			</line>
+			<staticText>
+				<reportElement x="231" y="315" width="100" height="20" uuid="80b27289-2a16-4fb4-ba66-e96804a44bb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Principle Signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="338" y="334" width="200" height="1" uuid="29cd5a0b-0ed3-482b-9b6e-72ea89768323"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

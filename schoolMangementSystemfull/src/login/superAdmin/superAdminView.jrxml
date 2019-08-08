@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Fee_type" language="groovy" pageWidth="430" pageHeight="400" columnWidth="390" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83a940db-41fb-4909-8251-b9bd00745308">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="106"/>
+	<queryString>
+		<![CDATA[select  SHOOL_INFO.ID as school_info_id,
+ SHOOL_INFO.NAME,
+ SHOOL_INFO.PHONE,
+ SHOOL_INFO.ADDRESS,
+ SHOOL_INFO.LOGO,
+ SUPER_ADMIN.ID as super_admin_id,
+ SUPER_ADMIN.NAME as super_admin_name,
+ SUPER_ADMIN.USER_NAME,
+ SUPER_ADMIN.PASSWORD,
+ SUPER_ADMIN.PHOTO from SUPER_ADMIN ,SHOOL_INFO]]>
+	</queryString>
+	<field name="SCHOOL_INFO_ID" class="java.lang.Integer"/>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SUPER_ADMIN_ID" class="java.lang.Integer"/>
+	<field name="SUPER_ADMIN_NAME" class="java.lang.String"/>
+	<field name="USER_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PASSWORD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHOTO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="59" y="26" width="331" height="27" forecolor="#FFFFFF" backcolor="#006666" uuid="c8081548-5e28-4e44-b22c-720db9438662"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="14" width="100" height="50" uuid="981c5800-505e-4751-a190-aed233b7fafa"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="59" y="53" width="331" height="20" uuid="32d4a5b1-fb2b-4548-84d7-6c7f9c9df684"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<image>
+				<reportElement x="290" y="10" width="100" height="50" uuid="03998ee1-4add-4837-aa87-26cb9c5f4b38"/>
+				<imageExpression><![CDATA[$F{PHOTO}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="219" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="123" width="100" height="20" uuid="1742cd59-a61e-4c78-9463-d75961e26235"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UserName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="52" width="100" height="20" uuid="5fa0b34c-1179-4c3b-981c-dd0483f47777"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admin Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="199" width="100" height="20" uuid="afba6514-6f4e-4740-b748-133a63ca605b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="216" y="51" width="145" height="20" uuid="ed73c0dc-672d-40be-8585-4878421fe8fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SUPER_ADMIN_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="122" width="144" height="20" uuid="d4766c49-c39d-4523-b008-894a891fd392"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{USER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="199" width="144" height="20" uuid="9d37dbd3-02c2-46c7-af38-6d29aa490f15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PASSWORD}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="390" height="1" uuid="34aa1eb5-4b6c-4ee2-9e93-c13bc9c1efcf"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="feeSlip" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="44565c8f-4fcb-4337-901e-9fc48dfe0acb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Student Name" class="java.lang.String"/>
+	<parameter name="fee_type" class="java.lang.String"/>
+	<parameter name="slip_no" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="class_name" class="java.lang.String"/>
+	<parameter name="section_ name" class="java.lang.String"/>
+	<parameter name="slip_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  student_fee.ID as slip_id,
+ student_fee.AMOUNT,
+ student_fee.STATUS,
+ student_fee.DATE,
+ student_fee.PAID_AMOUNT,
+ student_fee.DUES,
+ student_fee.STUDENT_ID,
+ student_fee.CLASS_ID,
+ student_fee.SECTION_ID,
+ student_fee.FEE_TYPE_ID,
+shool_info.ID,
+ NAME,
+ PHONE,
+ ADDRESS,
+ LOGO
+
+ from shool_info ,student_fee where student_fee.ID=$P{slip_id}]]>
+	</queryString>
+	<field name="SLIP_ID" class="java.lang.Integer"/>
+	<field name="AMOUNT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAID_AMOUNT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DUES" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STUDENT_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CLASS_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SECTION_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FEE_TYPE_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="51" y="25" width="504" height="32" forecolor="#FFFFFF" backcolor="#009999" uuid="cf60e24b-4073-4fa2-882f-811483bc7d9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="67" width="289" height="20" uuid="b2407975-dc60-4d12-9dd7-557f3c3ce130"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="1" y="17" width="100" height="50" uuid="dbe66955-9fa9-4b10-a6fd-828e56e9ff47"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="0" width="289" height="20" uuid="ed2afeaa-071f-4a67-84a1-839d93c69e0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fee Slip]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="360" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="0" width="100" height="20" uuid="a97cb952-fa92-4a29-a960-da969e7a580d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Slip No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="554" height="1" uuid="b566c57c-185b-4f91-8cdd-d0d2b8922837"/>
+			</line>
+			<staticText>
+				<reportElement x="22" y="54" width="100" height="20" uuid="d9db3a52-bd18-4917-8907-052582518afc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="54" width="100" height="20" uuid="0abda2a0-7170-4bea-83f2-59dd13d136b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{AMOUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="123" width="100" height="20" uuid="34d7c5b7-bbae-4824-a726-d4a7694f697b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="123" width="100" height="20" uuid="d948e7fc-5709-4a95-aeed-3c4c0d82fb4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="196" width="100" height="20" uuid="6d5db3dd-1da6-4c14-afc2-4770468d4133"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paid Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="196" width="100" height="20" uuid="0f60890d-65d6-4bef-9f6f-63885e69cb60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PAID_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="0" width="100" height="20" uuid="e2c888e4-7489-4e0b-8284-b1f870527f0f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="455" y="0" width="88" height="20" uuid="73d364cc-0bb5-48dd-a162-2ccd5cc3c787"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="270" width="100" height="20" uuid="13efc421-e9cb-4f45-a6c7-902fe2d76bd8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dues]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="270" width="100" height="20" uuid="bc35169b-dd32-4c2e-94b1-29198c8359c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DUES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="53" width="100" height="20" uuid="91dddbe7-301b-44a8-87e4-878f524b8e61"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STUDENT_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="315" y="54" width="100" height="20" uuid="1d9523c3-f0da-4340-b1e4-9b9960196e73"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="123" width="100" height="20" uuid="85fc969f-b005-4274-8973-4cfa4d9cd3dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="196" width="100" height="20" uuid="abb3fa2e-6e2b-4da2-b275-af9cc4351eaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="271" width="100" height="20" uuid="c45150c1-3c07-4ab2-b3de-f5004efe379f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Section]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="443" y="123" width="101" height="20" uuid="9be13f00-1eee-40d6-8a77-26efb302c001"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Student Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="338" width="100" height="20" uuid="bdb0efd2-4bfc-46e9-b54c-f86c9cd71b0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fee Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="338" width="100" height="20" uuid="2a174f9b-6dd7-47c3-89ba-02644703bce7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{fee_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="100" height="20" uuid="c9bf004e-8176-4e74-a8c4-db9e6defff99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{slip_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="197" width="100" height="20" uuid="6ae46846-cc9e-4ffb-9b94-bf1f5607d4f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{class_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="270" width="100" height="20" uuid="00ab33bc-7430-446f-b3b6-54f54c6c5a6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{section_ name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="248" y="25" width="100" height="20" uuid="127dac98-afa3-4538-9c70-427caa8e480f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Principle Signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="348" y="44" width="206" height="1" uuid="96ca68b0-9594-4bc2-97a5-f07e5afc29e2"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

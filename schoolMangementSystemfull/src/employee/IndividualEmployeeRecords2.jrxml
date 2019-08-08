@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="900" pageHeight="842" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="725e63d6-45cf-4aab-bdfd-f12907879c98">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="reg_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select EMPLOYEE.REG_NO,
+ EMPLOYEE.NAME,
+ EMPLOYEE.ADDRESS,
+ EMPLOYEE.PHONE,
+ EMPLOYEE.EMAIL,
+ EMPLOYEE.EXPERIENCE,
+ EMPLOYEE.QUALIFICATION,
+ EMPLOYEE.JOIN_DATE,
+ EMPLOYEE.PHOTO,
+ EMPLOYEE.LEAVE_STATUS,
+ EMPLOYEE.LEAVE_DATE,
+ EMPLOYEE.REASON,
+ EMPLOYEE.DESIGNATION,
+ EMPLOYEE.GENDER,
+ EMPLOYEE.SALARY,
+ EMPLOYEE.FATHER_NAME,
+ EMPLOYEE.VIECHLE_ID,shool_info.name as schol_name,shool_info.address as schol_add,shool_info.logo from shool_info,EMPLOYEE WHERE EMPLOYEE.reg_no=$P{reg_id}]]>
+	</queryString>
+	<field name="REG_NO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EMAIL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EXPERIENCE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUALIFICATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="JOIN_DATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHOTO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LEAVE_STATUS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LEAVE_DATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REASON" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DESIGNATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="GENDER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SALARY" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FATHER_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VIECHLE_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SCHOL_NAME" class="java.lang.String"/>
+	<field name="SCHOL_ADD" class="java.lang.String"/>
+	<field name="LOGO" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="144" height="79" uuid="4f3cd7dc-7170-4230-97f0-e92ebdeb779e"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement mode="Opaque" x="74" y="15" width="786" height="36" forecolor="#FFFFFF" backcolor="#009999" uuid="2b7fcb92-5063-4a48-ae4f-49726495ff09"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SCHOL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="51" width="730" height="20" uuid="66523566-d0c3-46a3-a75d-d12d007515a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SCHOL_ADD}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="100" height="20" uuid="4b361af9-171e-4115-bba5-cc0db3659b57"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0= Not Leave]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="43" width="100" height="20" uuid="5bc88652-99b4-427a-bd66-8f232d9bc0ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1= Leave]]></text>
+			</staticText>
+			<image>
+				<reportElement x="743" y="5" width="104" height="69" isRemoveLineWhenBlank="true" uuid="b37e3933-7bc4-4314-a0f2-20cd276c5fcc"/>
+				<imageExpression><![CDATA[$F{PHOTO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="336" y="5" width="181" height="20" uuid="56d76455-d656-4dbe-b92e-fbe55642bf02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Record]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="609" splitType="Stretch">
+			<staticText>
+				<reportElement x="59" y="12" width="68" height="20" uuid="38aa96d7-58d0-4d0c-bb45-50b6122b1216"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REG_NO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="13" width="70" height="20" uuid="54752339-52a4-406d-84fd-99921d1f0eec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REG_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="59" y="74" width="68" height="20" uuid="b45fab50-6ed6-4d3f-a360-74c44f703965"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="75" width="70" height="20" uuid="f569e246-5fbb-4f8f-b3e6-39c6f20a8a7a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="59" y="145" width="68" height="20" uuid="642ade05-0299-4d98-a2b1-d3f3519541e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GENDER]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="146" width="69" height="20" uuid="9fa234c8-821a-4d8b-9a32-75f0c2ccb1db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GENDER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="13" width="100" height="20" uuid="61dbd9a2-aee3-47a2-95b2-041ccac9eb32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{QUALIFICATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="12" width="100" height="20" uuid="6ec3fc45-025d-44b1-afd0-b0de494e1543"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUALIFICATION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="75" width="100" height="20" uuid="ce09367b-8347-4ff2-8f9b-9ff9f39e00ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EXPERIENCE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="74" width="100" height="20" uuid="71f96796-4b5b-444f-b3ad-a305957e06cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPERIENCE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="146" width="100" height="20" uuid="f0f9c6b9-0dc0-43a4-a51a-588f14e03db1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESIGNATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="145" width="100" height="20" uuid="597cb73a-c2fc-4bf8-8db5-d38a327e02e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESIGNATION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="704" y="13" width="100" height="20" uuid="1f8df90e-40e0-423b-b972-a27ec4687c92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LEAVE_STATUS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="556" y="12" width="100" height="20" uuid="0387fbbc-1656-4be9-8553-ae4189bb4ecd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LEAVE_STATUS]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy" isBlankWhenNull="true">
+				<reportElement x="704" y="75" width="100" height="20" isRemoveLineWhenBlank="true" uuid="a5fd2562-e245-437c-8676-149f1e39a837"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LEAVE_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="556" y="75" width="100" height="20" isRemoveLineWhenBlank="true" uuid="c18e1808-0dbc-4286-96a4-ff5e954cd356"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LEAVE_DATE]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="705" y="146" width="99" height="20" uuid="ad907854-21bd-4607-8c9d-b6934f87a1b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JOIN_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="558" y="146" width="98" height="20" uuid="94df65d4-b0e6-4ce5-80fa-de92d3c9a50b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JOIN_DATE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="214" width="82" height="20" uuid="063b0546-a963-46a5-baba-09b610b6f336"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PHONE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="59" y="213" width="68" height="20" uuid="15480623-6e24-4158-af35-81735206945f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PHONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="213" width="100" height="20" uuid="9b6cbd04-42d2-4c84-8d5a-5e389602bae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="214" width="105" height="20" uuid="379f8785-1f85-401b-b076-95f727604b6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

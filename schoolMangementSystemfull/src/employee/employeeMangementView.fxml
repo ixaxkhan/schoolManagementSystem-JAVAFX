@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.Registration.StudentController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="1048.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-14.0" layoutY="-4.0" prefHeight="133.0" prefWidth="1084.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-4.0">
+         <children>
+            <Label layoutX="232.0" layoutY="21.0" text="Student Management" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="278.0" layoutY="94.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="26.0" layoutY="72.0" mnemonicParsing="false" onAction="#backToSystemSetting" prefHeight="44.0" prefWidth="143.0" style="-fx-background-color: #2D75E8;" text="  ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <TabPane layoutY="128.0" prefHeight="565.0" prefWidth="1068.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="128.0">
+        <tabs>
+          <Tab text="Student Registration">
+               <content>
+                  <SplitPane dividerPositions="0.42228464419475653" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="408.0">
+                           <children>
+                              <BorderPane prefHeight="716.0" prefWidth="501.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <AnchorPane prefHeight="57.0" prefWidth="501.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField layoutX="181.0" layoutY="16.0" prefHeight="25.0" prefWidth="231.0" promptText="Search by Registration No" style="-fx-background-radius: 2em;" />
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ScrollPane prefHeight="659.0" prefWidth="501.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <JFXTreeTableView prefHeight="473.0" prefWidth="1600.0">
+                                                   <columns>
+                                                      <TreeTableColumn fx:id="tbStuReg" prefWidth="160.0" text="Student Registration No" />
+                                                      <TreeTableColumn fx:id="tbStuName" prefWidth="160.0" text="Student Name" />
+                                                      <TreeTableColumn fx:id="tbFatherName" prefWidth="160.0" text="Father Name" />
+                                                      <TreeTableColumn fx:id="tbGender" prefWidth="160.0" text="Gender" />
+                                                      <TreeTableColumn fx:id="tbDateBith" prefWidth="160.0" text="Date of Birth" />
+                                                      <TreeTableColumn fx:id="tbPhoneNumber" prefWidth="160.0" text="Phone Number" />
+                                                      <TreeTableColumn fx:id="tbEmail" prefWidth="160.0" text="Email" />
+                                                      <TreeTableColumn fx:id="tbAddress" prefWidth="160.0" text="Adress" />
+                                                      <TreeTableColumn fx:id="tbUpdate" prefWidth="160.0" text="Update" />
+                                                      <TreeTableColumn fx:id="tbDelete" prefWidth="160.0" text="Delete" />
+                                                   </columns>
+                                                </JFXTreeTableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="545.0" prefWidth="492.0">
+                           <children>
+                              <BorderPane prefHeight="536.0" prefWidth="614.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ScrollPane prefHeight="533.0" prefWidth="614.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <fx:include source="form.fxml" />
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+          <Tab text="Student Leave">
+               <content>
+                  <SplitPane prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                        <BorderPane prefHeight="536.0" prefWidth="1068.0">
+                           <top>
+                              <AnchorPane prefHeight="254.0" prefWidth="1068.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <GridPane layoutX="176.0" layoutY="21.0" prefHeight="185.0" prefWidth="358.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="107.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="557.0" minWidth="10.0" prefWidth="294.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="44.0" prefWidth="447.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <ComboBox layoutX="68.0" layoutY="16.0" prefWidth="150.0" style="-fx-background-radius: 1em;" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="31.0" layoutY="20.0" text="Class Name" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label layoutX="28.0" layoutY="25.0" text="Section Name" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label layoutX="28.0" layoutY="27.0" text="Reg. No" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <ComboBox layoutX="68.0" layoutY="21.0" prefWidth="150.0" style="-fx-background-radius: 1em;" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <ComboBox layoutX="68.0" layoutY="19.0" prefWidth="150.0" style="-fx-background-radius: 1em;" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="742.0" layoutY="14.0" prefHeight="171.0" prefWidth="409.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="115.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="64.0" layoutY="41.0" text="Reason of Leaving" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <TextArea layoutX="2.0" layoutY="39.0" prefHeight="171.0" prefWidth="200.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                    <HBox layoutX="560.0" layoutY="195.0" prefHeight="37.0" prefWidth="267.0" style="-fx-background-radius: 2em;">
+                                       <children>
+                                          <JFXButton prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: #dd2d2d; -fx-background-radius: 2em;" text="Save" textFill="#f2eeee" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                           <center>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <JFXTreeTableView prefHeight="282.0" prefWidth="1068.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TreeTableColumn prefWidth="169.0" text="Student Registration No" />
+                                          <TreeTableColumn prefWidth="143.0" text="Student Name" />
+                                          <TreeTableColumn prefWidth="194.0" text="Father name" />
+                                          <TreeTableColumn prefWidth="195.0" text="Gender" />
+                                          <TreeTableColumn prefWidth="187.0" text="Reason of Leaving" />
+                                          <TreeTableColumn prefWidth="183.0" text="Date of leaving" />
+                                          <TreeTableColumn prefWidth="230.0" text="Leaving class" />
+                                       </columns>
+                                    </JFXTreeTableView>
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                        </BorderPane>
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+            <Tab text="Student Promot">
+               <content>
+                  <SplitPane prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <BorderPane prefHeight="536.0" prefWidth="1068.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <AnchorPane prefHeight="244.0" prefWidth="1068.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane layoutX="51.0" layoutY="24.0" prefHeight="195.0" prefWidth="447.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="115.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="332.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="33.0" layoutY="16.0" text="Existing Class" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label layoutX="29.0" layoutY="16.0" text="Existing Section" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label layoutX="38.0" layoutY="16.0" text="Promot Class" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ComboBox layoutX="75.0" layoutY="12.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ComboBox layoutX="74.0" layoutY="12.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <ComboBox layoutX="75.0" layoutY="12.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <ComboBox layoutX="75.0" layoutY="12.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="10.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label layoutX="38.0" layoutY="16.0" text="Promot Section" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                          <HBox layoutX="562.0" layoutY="186.0" prefHeight="28.0" prefWidth="200.0" style="-fx-background-radius: 2em;">
+                                             <children>
+                                                <JFXButton prefHeight="33.0" prefWidth="200.0" style="-fx-background-radius: 2em; -fx-background-color: #077c2e;" text="Update" textFill="#edf5f0" />
+                                             </children>
+                                          </HBox>
+                                          <JFXCheckBox layoutX="946.0" layoutY="63.0" text="Are the student are Alumi ?" />
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <JFXTreeTableView layoutX="34.0" prefHeight="322.0" prefWidth="1068.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TreeTableColumn prefWidth="244.0" text="Student Registration No" />
+                                                <TreeTableColumn prefWidth="267.0" text="Student Name" />
+                                                <TreeTableColumn prefWidth="320.0" text="Father Name" />
+                                                <TreeTableColumn prefWidth="251.0" text="Gender" />
+                                                <TreeTableColumn prefWidth="240.0" text="Action" />
+                                             </columns>
+                                          </JFXTreeTableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

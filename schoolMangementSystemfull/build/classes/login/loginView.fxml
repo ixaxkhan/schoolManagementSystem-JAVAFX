@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+   <children>
+      <BorderPane layoutX="294.0" layoutY="120.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="48.0" prefWidth="1200.0" style="-fx-background-color: #ADD8E6;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="-3.0" layoutY="-2.0" prefHeight="56.0" prefWidth="275.0" style="-fx-background-color: #C0C0C0;" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="544.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="24.0" layoutY="-63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/programmer.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox fx:id="comboRole" layoutX="52.0" layoutY="238.0" prefHeight="29.0" prefWidth="168.0" promptText="choose login type" />
+                  <TextField fx:id="txfUserName" layoutX="52.0" layoutY="305.0" prefHeight="26.0" prefWidth="168.0" promptText="user Name" style="-fx-background-color: white;" />
+                  <Button fx:id="loginbtn" layoutX="77.0" layoutY="447.0" mnemonicParsing="false" onAction="#loginToSystem" prefHeight="32.0" prefWidth="95.0" text="login">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/login.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <PasswordField fx:id="txfPassword" layoutX="52.0" layoutY="375.0" prefHeight="25.0" prefWidth="169.0" promptText="Password" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="541.0" prefWidth="928.0" style="-fx-background-color: #ADD8E6;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="78.0" fitWidth="115.0" layoutX="139.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/email.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="200.0" fitWidth="350.0" layoutX="379.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/school%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="123.0" layoutX="393.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/money.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="76.0" fitWidth="98.0" layoutX="101.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/student.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="112.0" fitWidth="125.0" layoutX="716.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/presentation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="150.0" layoutX="764.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/bus%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="136.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="317.0" layoutY="446.0" prefHeight="27.0" prefWidth="347.0" text="Devolop By Deelecom Business Soution" textFill="#eef5f2">
+                     <font>
+                        <Font name="Batang" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="324.0" layoutY="487.0" prefHeight="17.0" prefWidth="362.0" text="Main Office Chakdara Mubarak Plaza University Road Chakdara " textFill="#fcfcfc" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="12.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="8.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

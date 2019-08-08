@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.ProductAddViewController">
+   <top>
+      <AnchorPane prefHeight="292.0" prefWidth="1048.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane layoutX="91.0" layoutY="36.0" prefHeight="156.0" prefWidth="941.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="133.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="307.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="167.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="53.0" layoutY="18.0" text="Date" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="32.0" layoutY="18.0" text="Min Quantity" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="49.0" layoutY="30.0" text="Details" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <DatePicker fx:id="txfDate" layoutX="36.0" layoutY="14.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="txfMin" layoutX="36.0" layoutY="14.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <TextArea fx:id="txfDescription" layoutX="46.0" layoutY="28.0" prefHeight="63.0" prefWidth="479.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <Label layoutX="64.0" layoutY="18.0" text="Product Name" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="73.0" layoutY="18.0" text="Mix Quantity" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                     <children>
+                        <TextField fx:id="txfProductName" layoutX="62.0" layoutY="14.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="txfMax" layoutX="63.0" layoutY="14.0" prefWidth="200.0" style="-fx-background-radius: 2em;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <HBox layoutX="502.0" layoutY="240.0" prefHeight="25.0" prefWidth="148.0">
+               <children>
+                  <JFXButton onAction="#save" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #0e7524; -fx-background-radius: 2em;" text="Save" textFill="#e1e8e2" />
+               </children>
+            </HBox>
+            <TextField fx:id="txfSearchBox" layoutX="937.0" layoutY="266.0" promptText="Search by product name" />
+            <JFXButton layoutX="6.0" layoutY="253.0" onAction="#refresh" text="   ">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-update-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="326.0" prefWidth="1048.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" prefHeight="200.0" prefWidth="1032.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="tbProductID" prefWidth="130.0" text="Product ID " />
+                <TableColumn fx:id="tbProductName" prefWidth="130.0" text="Product Name" />
+                  <TableColumn fx:id="tbMin" prefWidth="130.0" text="Minimum Quantity" />
+                  <TableColumn fx:id="tbMax" prefWidth="130.0" text="Maximum Quantity" />
+                  <TableColumn fx:id="tbDate" prefWidth="130.0" text="Date" />
+                  <TableColumn fx:id="tbDescription" prefWidth="130.0" text="Description" />
+                  <TableColumn fx:id="tbUpate" prefWidth="130.0" text="Update" />
+                  <TableColumn fx:id="tbDelete" prefWidth="130.0" text="Date" />
+                  <TableColumn fx:id="tbView" prefWidth="130.0" text="View" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

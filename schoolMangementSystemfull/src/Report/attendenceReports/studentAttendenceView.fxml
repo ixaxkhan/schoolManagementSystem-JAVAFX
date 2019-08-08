@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.attendenceReports.StudentAttendenceViewController">
+   <children>
+      <Separator layoutY="301.0" prefHeight="2.0" prefWidth="1052.0" />
+      <Label layoutX="5.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" text="Class Section Wise" underline="true" />
+      <Label layoutX="5.0" layoutY="325.0" prefHeight="17.0" prefWidth="130.0" text="Student Wise" underline="true" />
+      <JFXDatePicker fx:id="classSectionFromDate" layoutX="538.0" layoutY="62.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+      <JFXComboBox fx:id="comboClass1" labelFloat="true" layoutX="151.0" layoutY="62.0" prefHeight="25.0" prefWidth="200.0" promptText="Class Name" />
+      <JFXComboBox fx:id="comboSection1" labelFloat="true" layoutX="151.0" layoutY="165.0" prefHeight="25.0" prefWidth="200.0" promptText="Section Name" />
+      <JFXDatePicker fx:id="classSectionToDate" layoutX="538.0" layoutY="165.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+      <JFXComboBox fx:id="comboClass2" labelFloat="true" layoutX="151.0" layoutY="342.0" prefHeight="25.0" prefWidth="200.0" promptText="Class Name" />
+      <JFXComboBox fx:id="comboSection2" labelFloat="true" layoutX="151.0" layoutY="452.0" prefHeight="25.0" prefWidth="200.0" promptText="Section Name" />
+      <HBox layoutX="310.0" layoutY="249.0" prefHeight="35.0" prefWidth="337.0">
+         <children>
+            <JFXButton onAction="#classSectionWiseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="310.0" layoutY="540.0" prefHeight="35.0" prefWidth="337.0">
+         <children>
+            <JFXButton onAction="#studentWiseView" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #1a65ab;" text="View" textFill="#e6ebe4">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: #ea410e;" text="Cancel" textFill="#f2eeed">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXComboBox fx:id="studentRegNo" labelFloat="true" layoutX="532.0" layoutY="342.0" prefHeight="25.0" prefWidth="200.0" promptText="Student Registration No" />
+      <JFXDatePicker fx:id="studentWiseFromDate" layoutX="532.0" layoutY="452.0" prefHeight="25.0" prefWidth="200.0" promptText="From Date " />
+      <JFXDatePicker fx:id="studentWiseToDate" layoutX="852.0" layoutY="342.0" prefHeight="25.0" prefWidth="200.0" promptText="To Date" />
+   </children>
+</AnchorPane>
